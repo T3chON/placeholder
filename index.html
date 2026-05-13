@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TecnON | Coming Soon</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0f1115;
+      --card: #171a21;
+      --text: #f6f7fb;
+      --muted: #b8beca;
+      --accent: #ffd23f;
+      --accent-2: #ef233c;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(239, 35, 60, 0.22), transparent 42%),
+        radial-gradient(circle at bottom left, rgba(255, 210, 63, 0.2), transparent 45%),
+        var(--bg);
+      display: grid;
+      place-items: center;
+      padding: 1.5rem;
+    }
+
+    main {
+      width: min(680px, 100%);
+      background: linear-gradient(160deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      backdrop-filter: blur(3px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid rgba(255, 210, 63, 0.4);
+      border-radius: 999px;
+      padding: 0.35rem 0.75rem;
+      margin-bottom: 1.2rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      line-height: 1.05;
+    }
+
+    .brand {
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    p {
+      margin: 1.2rem auto 0;
+      max-width: 52ch;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 1.02rem;
+    }
+
+    .highlight { color: var(--text); }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="badge">Angola e-commerce</span>
+    <h1><span class="brand">TecnON</span> is coming soon</h1>
+    <p>
+      We are almost ready to launch a new online shopping experience made for Angola.
+      Stay tuned — <span class="highlight">TecnON</span> will be live very soon.
+    </p>
+  </main>
+</body>
+</html>
