@@ -1,89 +1,277 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TecnON | Coming Soon</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #0f1115;
-      --card: #171a21;
-      --text: #f6f7fb;
-      --muted: #b8beca;
-      --accent: #ffd23f;
-      --accent-2: #ef233c;
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Exo — A nova era do e-commerce em Angola</title>
+<meta name="description" content="Exo está a chegar. A próxima geração de e-commerce em Angola — tecnologia, moda e lifestyle entregues com cuidado." />
+<meta property="og:title" content="Exo — A nova era do e-commerce em Angola" />
+<meta property="og:description" content="Estamos quase prontos. Inscreve-te e sê dos primeiros a comprar." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+          display: ['"Space Grotesk"', 'Inter', 'sans-serif'],
+        },
+        colors: {
+          ink: '#0a0a0f',
+          surface: '#0f1016',
+          accent: '#ff5b2e',
+        },
+        animation: {
+          'float-slow': 'float 9s ease-in-out infinite',
+          'float-slower': 'float 13s ease-in-out infinite',
+          'pulse-slow': 'pulse 6s ease-in-out infinite',
+          'marquee': 'marquee 35s linear infinite',
+        },
+        keyframes: {
+          float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-18px)' } },
+          marquee: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } },
+        }
+      }
     }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top right, rgba(239, 35, 60, 0.22), transparent 42%),
-        radial-gradient(circle at bottom left, rgba(255, 210, 63, 0.2), transparent 45%),
-        var(--bg);
-      display: grid;
-      place-items: center;
-      padding: 1.5rem;
-    }
-
-    main {
-      width: min(680px, 100%);
-      background: linear-gradient(160deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 18px;
-      padding: 2.5rem 2rem;
-      text-align: center;
-      backdrop-filter: blur(3px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-    }
-
-    .badge {
-      display: inline-block;
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent);
-      border: 1px solid rgba(255, 210, 63, 0.4);
-      border-radius: 999px;
-      padding: 0.35rem 0.75rem;
-      margin-bottom: 1.2rem;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(2rem, 6vw, 3.4rem);
-      line-height: 1.05;
-    }
-
-    .brand {
-      color: var(--accent);
-      font-weight: 800;
-    }
-
-    p {
-      margin: 1.2rem auto 0;
-      max-width: 52ch;
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: 1.02rem;
-    }
-
-    .highlight { color: var(--text); }
-  </style>
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: #0a0a0f; color: #f5f5f7; }
+  .grain::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.06;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
+  .glow{background:radial-gradient(circle at 30% 20%, rgba(255,91,46,.35), transparent 60%), radial-gradient(circle at 80% 70%, rgba(110,80,255,.25), transparent 55%);}
+  .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(10px);}
+  .chip{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);}
+  .reveal{opacity:0;transform:translateY(20px);transition:all .9s cubic-bezier(.22,1,.36,1);}
+  .reveal.in{opacity:1;transform:none;}
+</style>
 </head>
-<body>
-  <main>
-    <span class="badge">Angola e-commerce</span>
-    <h1><span class="brand">TecnON</span> is coming soon</h1>
-    <p>
-      We are almost ready to launch a new online shopping experience made for Angola.
-      Stay tuned Bro!— <span class="highlight">TecnON</span> will be live very soon.
+<body class="grain antialiased">
+
+<!-- background glow -->
+<div class="pointer-events-none fixed inset-0 glow"></div>
+
+<!-- NAV -->
+<header class="relative z-10">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
+    <a href="#" class="flex items-center gap-2">
+      <div class="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-accent to-rose-500 font-display text-lg font-bold">E</div>
+      <span class="font-display text-xl font-semibold tracking-tight">Exo</span>
+    </a>
+    <nav class="hidden gap-8 text-sm text-white/70 md:flex">
+      <a href="#vision" class="hover:text-white">Visão</a>
+      <a href="#preview" class="hover:text-white">Pré-visualização</a>
+      <a href="#brands" class="hover:text-white">Marcas</a>
+      <a href="#notify" class="hover:text-white">Notificar-me</a>
+    </nav>
+    <a href="#notify" class="rounded-full bg-white px-4 py-2 text-sm font-medium text-ink transition hover:bg-white/90">Entrar na lista</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="relative z-10 overflow-hidden">
+  <div class="mx-auto max-w-7xl px-6 pt-12 pb-24 md:pt-20 md:pb-32">
+    <div class="chip mx-auto mb-8 inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs">
+      <span class="h-1.5 w-1.5 animate-pulse-slow rounded-full bg-accent"></span>
+      <span class="text-white/70">Lançamento em Luanda · 2026</span>
+    </div>
+
+    <h1 class="font-display text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl lg:text-8xl">
+      A próxima era do<br/>
+      <span class="bg-gradient-to-r from-accent via-rose-400 to-amber-300 bg-clip-text text-transparent">e-commerce</span> em Angola.
+    </h1>
+    <p class="mx-auto mt-8 max-w-2xl text-base text-white/60 md:text-lg">
+      Tecnologia, moda e lifestyle das melhores marcas do mundo — entregues à tua porta com o cuidado que mereces. Estamos a construir algo bonito. Quase pronto.
     </p>
-  </main>
+
+    <!-- email -->
+    <form id="notify" onsubmit="event.preventDefault();const i=this.querySelector('input');const m=document.getElementById('msg');if(i.value){m.textContent='Estás na lista. Vemo-nos em breve. ✨';i.value=''}" class="mx-auto mt-10 flex max-w-md items-center gap-2 rounded-full border border-white/15 bg-white/5 p-1.5 backdrop-blur">
+      <input type="email" required placeholder="o-teu-email@exemplo.com" class="flex-1 bg-transparent px-4 py-2 text-sm placeholder:text-white/40 focus:outline-none" />
+      <button class="rounded-full bg-accent px-5 py-2 text-sm font-medium text-white transition hover:bg-accent/90">Avisa-me</button>
+    </form>
+    <p id="msg" class="mt-3 text-xs text-emerald-400 h-4"></p>
+
+    <!-- countdown / stats -->
+    <div class="mx-auto mt-16 grid max-w-3xl grid-cols-3 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/5 text-center md:grid-cols-3">
+      <div class="bg-ink/60 p-6">
+        <p class="font-display text-3xl font-semibold md:text-4xl">+500</p>
+        <p class="mt-1 text-xs uppercase tracking-wider text-white/50">Produtos curados</p>
+      </div>
+      <div class="bg-ink/60 p-6">
+        <p class="font-display text-3xl font-semibold md:text-4xl">48h</p>
+        <p class="mt-1 text-xs uppercase tracking-wider text-white/50">Entrega em Luanda</p>
+      </div>
+      <div class="bg-ink/60 p-6">
+        <p class="font-display text-3xl font-semibold md:text-4xl">100%</p>
+        <p class="mt-1 text-xs uppercase tracking-wider text-white/50">Originais garantidos</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section id="vision" class="relative z-10 border-y border-white/5 bg-surface/60">
+  <div class="mx-auto grid max-w-7xl gap-12 px-6 py-24 md:grid-cols-3">
+    <div class="reveal">
+      <div class="mb-4 grid h-10 w-10 place-items-center rounded-lg bg-accent/15 text-accent">★</div>
+      <h3 class="font-display text-xl font-semibold">Curadoria obsessiva</h3>
+      <p class="mt-3 text-sm text-white/60">Cada produto na Exo é escolhido a dedo. Sem ruído, só o melhor.</p>
+    </div>
+    <div class="reveal">
+      <div class="mb-4 grid h-10 w-10 place-items-center rounded-lg bg-accent/15 text-accent">⚡</div>
+      <h3 class="font-display text-xl font-semibold">Entregas rápidas</h3>
+      <p class="mt-3 text-sm text-white/60">Logística pensada para Angola. Em Luanda, em 48h. No país inteiro, sempre que possível.</p>
+    </div>
+    <div class="reveal">
+      <div class="mb-4 grid h-10 w-10 place-items-center rounded-lg bg-accent/15 text-accent">✦</div>
+      <h3 class="font-display text-xl font-semibold">Suporte humano</h3>
+      <p class="mt-3 text-sm text-white/60">Pessoas reais, respostas rápidas. Compras devem ser uma alegria, não uma dor.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT PREVIEW -->
+<section id="preview" class="relative z-10">
+  <div class="mx-auto max-w-7xl px-6 py-24">
+    <div class="mb-12 flex items-end justify-between">
+      <div>
+        <p class="text-xs uppercase tracking-[0.2em] text-white/50">Espreita</p>
+        <h2 class="mt-2 font-display text-3xl font-semibold tracking-tight md:text-5xl">O que vamos vender</h2>
+      </div>
+      <span class="hidden text-xs text-white/40 md:block">Apenas uma amostra · catálogo completo no lançamento</span>
+    </div>
+
+    <div class="grid grid-cols-2 gap-5 md:grid-cols-4">
+      <!-- card template -->
+      <article class="reveal card group overflow-hidden rounded-2xl">
+        <div class="relative aspect-square overflow-hidden bg-gradient-to-br from-zinc-800 to-zinc-900">
+          <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600&q=80" alt="Smartphone" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" loading="lazy"/>
+          <span class="absolute left-3 top-3 rounded-full bg-accent px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider">Em breve</span>
+        </div>
+        <div class="p-4">
+          <p class="text-[10px] uppercase tracking-wider text-white/40">Smartphones</p>
+          <p class="mt-1 text-sm font-medium">Os flagships do momento</p>
+        </div>
+      </article>
+
+      <article class="reveal card group overflow-hidden rounded-2xl">
+        <div class="relative aspect-square overflow-hidden bg-zinc-900">
+          <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&q=80" alt="Laptop" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" loading="lazy"/>
+        </div>
+        <div class="p-4">
+          <p class="text-[10px] uppercase tracking-wider text-white/40">Laptops</p>
+          <p class="mt-1 text-sm font-medium">Para criadores e profissionais</p>
+        </div>
+      </article>
+
+      <article class="reveal card group overflow-hidden rounded-2xl">
+        <div class="relative aspect-square overflow-hidden bg-zinc-900">
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80" alt="Headphones" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" loading="lazy"/>
+        </div>
+        <div class="p-4">
+          <p class="text-[10px] uppercase tracking-wider text-white/40">Áudio</p>
+          <p class="mt-1 text-sm font-medium">Som que se sente</p>
+        </div>
+      </article>
+
+      <article class="reveal card group overflow-hidden rounded-2xl">
+        <div class="relative aspect-square overflow-hidden bg-zinc-900">
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80" alt="Wearables" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" loading="lazy"/>
+        </div>
+        <div class="p-4">
+          <p class="text-[10px] uppercase tracking-wider text-white/40">Wearables</p>
+          <p class="mt-1 text-sm font-medium">Tecnologia no pulso</p>
+        </div>
+      </article>
+
+      <article class="reveal card group overflow-hidden rounded-2xl">
+        <div class="relative aspect-square overflow-hidden bg-zinc-900">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80" alt="Sneakers" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" loading="lazy"/>
+        </div>
+        <div class="p-4">
+          <p class="text-[10px] uppercase tracking-wider text-white/40">Sneakers</p>
+          <p class="mt-1 text-sm font-medium">Edições escolhidas</p>
+        </div>
+      </article>
+
+      <article class="reveal card group overflow-hidden rounded-2xl">
+        <div class="relative aspect-square overflow-hidden bg-zinc-900">
+          <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80" alt="Camera" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" loading="lazy"/>
+        </div>
+        <div class="p-4">
+          <p class="text-[10px] uppercase tracking-wider text-white/40">Câmaras</p>
+          <p class="mt-1 text-sm font-medium">Para contar histórias</p>
+        </div>
+      </article>
+
+      <article class="reveal card group overflow-hidden rounded-2xl">
+        <div class="relative aspect-square overflow-hidden bg-zinc-900">
+          <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=600&q=80" alt="Gaming" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" loading="lazy"/>
+        </div>
+        <div class="p-4">
+          <p class="text-[10px] uppercase tracking-wider text-white/40">Gaming</p>
+          <p class="mt-1 text-sm font-medium">Setups completos</p>
+        </div>
+      </article>
+
+      <article class="reveal card group overflow-hidden rounded-2xl">
+        <div class="relative aspect-square overflow-hidden bg-zinc-900">
+          <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600&q=80" alt="Perfume" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" loading="lazy"/>
+        </div>
+        <div class="p-4">
+          <p class="text-[10px] uppercase tracking-wider text-white/40">Lifestyle</p>
+          <p class="mt-1 text-sm font-medium">Beleza & casa</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS marquee -->
+<section id="brands" class="relative z-10 overflow-hidden border-y border-white/5 bg-surface/50 py-10">
+  <p class="mb-6 text-center text-xs uppercase tracking-[0.3em] text-white/40">As marcas que amas, num só sítio</p>
+  <div class="flex w-max animate-marquee gap-16 px-6 text-2xl font-display font-semibold text-white/30 md:text-3xl">
+    <span>Apple</span><span>Samsung</span><span>Sony</span><span>Nike</span><span>Adidas</span><span>Bose</span><span>Canon</span><span>Dyson</span><span>LG</span><span>Xiaomi</span>
+    <span>Apple</span><span>Samsung</span><span>Sony</span><span>Nike</span><span>Adidas</span><span>Bose</span><span>Canon</span><span>Dyson</span><span>LG</span><span>Xiaomi</span>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="relative z-10">
+  <div class="mx-auto max-w-4xl px-6 py-28 text-center">
+    <h2 class="font-display text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
+      Algo grande está a<br/>caminho.
+    </h2>
+    <p class="mx-auto mt-6 max-w-xl text-white/60">Sê dos primeiros a saber quando abrirmos. Sem spam — só novidades que importam.</p>
+    <a href="#notify" class="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-ink hover:bg-white/90">
+      Entrar na lista de espera
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="relative z-10 border-t border-white/5">
+  <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-10 text-sm text-white/40 md:flex-row">
+    <div class="flex items-center gap-2">
+      <div class="grid h-7 w-7 place-items-center rounded-md bg-gradient-to-br from-accent to-rose-500 text-xs font-bold text-white">E</div>
+      <span>© 2026 Exo · Luanda, Angola</span>
+    </div>
+    <div class="flex gap-6">
+      <a href="mailto:hello@exo.ao" class="hover:text-white">hello@exo.ao</a>
+      <a href="#" class="hover:text-white">Instagram</a>
+      <a href="#" class="hover:text-white">Twitter</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((es)=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
 </body>
 </html>
