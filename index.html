@@ -1,277 +1,267 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>TechON — A nova era do e-commerce em Angola</title>
-<meta name="description" content="TechON está a chegar. A próxima geração de e-commerce em Angola — tecnologia, moda e lifestyle entregues com cuidado." />
-<meta property="og:title" content="TechON — A nova era do e-commerce em Angola" />
-<meta property="og:description" content="Estamos quase prontos. Inscreve-te e sê dos primeiros a comprar." />
-<meta property="og:type" content="website" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        fontFamily: {
-          sans: ['Inter', 'ui-sans-serif', 'system-ui'],
-          display: ['"Space Grotesk"', 'Inter', 'sans-serif'],
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TechON — A próxima era do e-commerce em Angola</title>
+    <meta name="description" content="TechON está a chegar. A nova forma de comprar tecnologia e lifestyle em Angola — curadoria premium, entregas rápidas e suporte humano." />
+    <meta property="og:title" content="TechON — Em breve" />
+    <meta property="og:description" content="A próxima era do e-commerce em Angola. Junte-se à lista." />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+              display: ['Space Grotesk', 'ui-sans-serif', 'system-ui'],
+            },
+            colors: {
+              ink: '#0a0a0f',
+              muted: '#6b7280',
+              line: '#ececee',
+              surface: '#fafafa',
+              accent: '#ff5b2e',
+            },
+          },
         },
-        colors: {
-          ink: '#0a0a0f',
-          surface: '#0f1016',
-          accent: '#ff5b2e',
-        },
-        animation: {
-          'float-slow': 'float 9s ease-in-out infinite',
-          'float-slower': 'float 13s ease-in-out infinite',
-          'pulse-slow': 'pulse 6s ease-in-out infinite',
-          'marquee': 'marquee 35s linear infinite',
-        },
-        keyframes: {
-          float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-18px)' } },
-          marquee: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } },
-        }
+      };
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      body { background: #ffffff; color: #0a0a0f; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+      .reveal { opacity: 0; transform: translateY(16px); transition: opacity .8s ease, transform .8s ease; }
+      .reveal.in { opacity: 1; transform: none; }
+      .marquee { display: flex; gap: 3rem; animation: marquee 30s linear infinite; }
+      @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+      .dotgrid {
+        background-image: radial-gradient(#0a0a0f12 1px, transparent 1px);
+        background-size: 22px 22px;
       }
-    }
-  }
-</script>
-<style>
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; background: #0a0a0f; color: #f5f5f7; }
-  .grain::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.06;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
-  .glow{background:radial-gradient(circle at 30% 20%, rgba(255,91,46,.35), transparent 60%), radial-gradient(circle at 80% 70%, rgba(110,80,255,.25), transparent 55%);}
-  .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(10px);}
-  .chip{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);}
-  .reveal{opacity:0;transform:translateY(20px);transition:all .9s cubic-bezier(.22,1,.36,1);}
-  .reveal.in{opacity:1;transform:none;}
-</style>
-</head>
-<body class="grain antialiased">
-
-<!-- background glow -->
-<div class="pointer-events-none fixed inset-0 glow"></div>
-
-<!-- NAV -->
-<header class="relative z-10">
-  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
-    <a href="#" class="flex items-center gap-2">
-      <div class="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-accent to-rose-500 font-display text-lg font-bold">E</div>
-      <span class="font-display text-xl font-semibold tracking-tight">TechON</span>
-    </a>
-    <nav class="hidden gap-8 text-sm text-white/70 md:flex">
-      <a href="#vision" class="hover:text-white">Visão</a>
-      <a href="#preview" class="hover:text-white">Pré-visualização</a>
-      <a href="#brands" class="hover:text-white">Marcas</a>
-      <a href="#notify" class="hover:text-white">Notificar-me</a>
-    </nav>
-    <a href="#notify" class="rounded-full bg-white px-4 py-2 text-sm font-medium text-ink transition hover:bg-white/90">Entrar na lista</a>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="relative z-10 overflow-hidden">
-  <div class="mx-auto max-w-7xl px-6 pt-12 pb-24 md:pt-20 md:pb-32">
-    <div class="chip mx-auto mb-8 inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs">
-      <span class="h-1.5 w-1.5 animate-pulse-slow rounded-full bg-accent"></span>
-      <span class="text-white/70">Lançamento em Luanda · 2026</span>
-    </div>
-
-    <h1 class="font-display text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl lg:text-8xl">
-      A próxima era do<br/>
-      <span class="bg-gradient-to-r from-accent via-rose-400 to-amber-300 bg-clip-text text-transparent">e-commerce</span> em Angola.
-    </h1>
-    <p class="mx-auto mt-8 max-w-2xl text-base text-white/60 md:text-lg">
-      Tecnologia, moda e lifestyle das melhores marcas do mundo — entregues à tua porta com o cuidado que mereces. Estamos a construir algo bonito. Quase pronto.
-    </p>
-
-    <!-- email -->
-    <form id="notify" onsubmit="event.preventDefault();const i=this.querySelector('input');const m=document.getElementById('msg');if(i.value){m.textContent='Estás na lista. Vemo-nos em breve. ✨';i.value=''}" class="mx-auto mt-10 flex max-w-md items-center gap-2 rounded-full border border-white/15 bg-white/5 p-1.5 backdrop-blur">
-      <input type="email" required placeholder="o-teu-email@exemplo.com" class="flex-1 bg-transparent px-4 py-2 text-sm placeholder:text-white/40 focus:outline-none" />
-      <button class="rounded-full bg-accent px-5 py-2 text-sm font-medium text-white transition hover:bg-accent/90">Avisa-me</button>
-    </form>
-    <p id="msg" class="mt-3 text-xs text-emerald-400 h-4"></p>
-
-    <!-- countdown / stats -->
-    <div class="mx-auto mt-16 grid max-w-3xl grid-cols-3 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/5 text-center md:grid-cols-3">
-      <div class="bg-ink/60 p-6">
-        <p class="font-display text-3xl font-semibold md:text-4xl">+500</p>
-        <p class="mt-1 text-xs uppercase tracking-wider text-white/50">Produtos curados</p>
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="sticky top-0 z-40 w-full border-b border-line bg-white/85 backdrop-blur">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <a href="#" class="flex items-center gap-2">
+          <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-ink text-white font-display text-sm font-bold">T</div>
+          <span class="font-display text-xl font-semibold tracking-tight">TechON</span>
+        </a>
+        <nav class="hidden gap-8 text-sm text-muted md:flex">
+          <a href="#vision" class="hover:text-ink">Visão</a>
+          <a href="#preview" class="hover:text-ink">Catálogo</a>
+          <a href="#brands" class="hover:text-ink">Marcas</a>
+          <a href="#cta" class="hover:text-ink">Notificar-me</a>
+        </nav>
+        <a href="#cta" class="rounded-full bg-ink px-4 py-2 text-xs font-medium text-white hover:opacity-90">Receber acesso</a>
       </div>
-      <div class="bg-ink/60 p-6">
-        <p class="font-display text-3xl font-semibold md:text-4xl">48h</p>
-        <p class="mt-1 text-xs uppercase tracking-wider text-white/50">Entrega em Luanda</p>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative overflow-hidden border-b border-line">
+      <div class="absolute inset-0 dotgrid opacity-60"></div>
+      <div class="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
+        <div class="reveal inline-flex items-center gap-2 rounded-full border border-line bg-white px-3 py-1 text-xs text-muted">
+          <span class="h-1.5 w-1.5 rounded-full bg-accent"></span>
+          Em construção — lançamento 2026
+        </div>
+        <h1 class="reveal mt-8 max-w-4xl font-display text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl">
+          A próxima era do <span class="text-accent">e-commerce</span> em Angola.
+        </h1>
+        <p class="reveal mt-6 max-w-xl text-lg text-muted">
+          A TechON está a construir a melhor forma de descobrir e comprar tecnologia e lifestyle em Angola. Curadoria premium, entregas rápidas, suporte humano.
+        </p>
+
+        <form class="reveal mt-10 flex max-w-md flex-col gap-3 sm:flex-row" onsubmit="event.preventDefault(); this.querySelector('button').innerText='Adicionado ✓'">
+          <input type="email" required placeholder="o-seu@email.com" class="flex-1 rounded-full border border-line bg-white px-5 py-3 text-sm outline-none placeholder:text-muted focus:border-ink" />
+          <button class="rounded-full bg-ink px-6 py-3 text-sm font-medium text-white hover:opacity-90">Avisar-me</button>
+        </form>
+
+        <div class="reveal mt-16 grid max-w-2xl grid-cols-3 gap-8 border-t border-line pt-8">
+          <div>
+            <p class="font-display text-3xl font-semibold">+500</p>
+            <p class="text-xs text-muted">produtos no lançamento</p>
+          </div>
+          <div>
+            <p class="font-display text-3xl font-semibold">48h</p>
+            <p class="text-xs text-muted">entrega em Luanda</p>
+          </div>
+          <div>
+            <p class="font-display text-3xl font-semibold">100%</p>
+            <p class="text-xs text-muted">produtos originais</p>
+          </div>
+        </div>
       </div>
-      <div class="bg-ink/60 p-6">
-        <p class="font-display text-3xl font-semibold md:text-4xl">100%</p>
-        <p class="mt-1 text-xs uppercase tracking-wider text-white/50">Originais garantidos</p>
+    </section>
+
+    <!-- Vision -->
+    <section id="vision" class="border-b border-line">
+      <div class="mx-auto max-w-6xl px-6 py-24">
+        <p class="reveal text-xs uppercase tracking-[0.2em] text-muted">A nossa visão</p>
+        <h2 class="reveal mt-3 max-w-2xl font-display text-4xl font-semibold tracking-tight md:text-5xl">
+          Comprar online em Angola, como nunca foi.
+        </h2>
+        <div class="mt-16 grid gap-10 md:grid-cols-3">
+          <div class="reveal">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-accent">01</div>
+            <h3 class="mt-5 font-display text-xl font-semibold">Curadoria</h3>
+            <p class="mt-2 text-sm text-muted">Cada produto é escolhido a dedo. Só o que vale a pena chega ao nosso catálogo.</p>
+          </div>
+          <div class="reveal">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-accent">02</div>
+            <h3 class="mt-5 font-display text-xl font-semibold">Entregas rápidas</h3>
+            <p class="mt-2 text-sm text-muted">Logística pensada para Angola. 48h em Luanda, dias úteis no resto do país.</p>
+          </div>
+          <div class="reveal">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-accent">03</div>
+            <h3 class="mt-5 font-display text-xl font-semibold">Suporte humano</h3>
+            <p class="mt-2 text-sm text-muted">Pessoas reais, prontas a ajudar antes e depois da compra. Sempre.</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- VISION -->
-<section id="vision" class="relative z-10 border-y border-white/5 bg-surface/60">
-  <div class="mx-auto grid max-w-7xl gap-12 px-6 py-24 md:grid-cols-3">
-    <div class="reveal">
-      <div class="mb-4 grid h-10 w-10 place-items-center rounded-lg bg-accent/15 text-accent">★</div>
-      <h3 class="font-display text-xl font-semibold">Curadoria obsessiva</h3>
-      <p class="mt-3 text-sm text-white/60">Cada produto na TechON é escolhido a dedo. Sem ruído, só o melhor.</p>
-    </div>
-    <div class="reveal">
-      <div class="mb-4 grid h-10 w-10 place-items-center rounded-lg bg-accent/15 text-accent">⚡</div>
-      <h3 class="font-display text-xl font-semibold">Entregas rápidas</h3>
-      <p class="mt-3 text-sm text-white/60">Logística pensada para Angola. Em Luanda, em 48h. No país inteiro, sempre que possível.</p>
-    </div>
-    <div class="reveal">
-      <div class="mb-4 grid h-10 w-10 place-items-center rounded-lg bg-accent/15 text-accent">✦</div>
-      <h3 class="font-display text-xl font-semibold">Suporte humano</h3>
-      <p class="mt-3 text-sm text-white/60">Pessoas reais, respostas rápidas. Compras devem ser uma alegria, não uma dor.</p>
-    </div>
-  </div>
-</section>
+    <!-- Product preview -->
+    <section id="preview" class="border-b border-line bg-surface">
+      <div class="mx-auto max-w-6xl px-6 py-24">
+        <div class="flex items-end justify-between gap-6">
+          <div>
+            <p class="reveal text-xs uppercase tracking-[0.2em] text-muted">Pré-visualização</p>
+            <h2 class="reveal mt-3 font-display text-4xl font-semibold tracking-tight md:text-5xl">O que vem aí.</h2>
+          </div>
+          <span class="reveal hidden text-sm text-muted md:block">Uma amostra das categorias</span>
+        </div>
 
-<!-- PRODUCT PREVIEW -->
-<section id="preview" class="relative z-10">
-  <div class="mx-auto max-w-7xl px-6 py-24">
-    <div class="mb-12 flex items-end justify-between">
-      <div>
-        <p class="text-xs uppercase tracking-[0.2em] text-white/50">Espreita</p>
-        <h2 class="mt-2 font-display text-3xl font-semibold tracking-tight md:text-5xl">O que vamos vender</h2>
+        <div class="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4">
+          <!-- cards -->
+          <div class="reveal group overflow-hidden rounded-2xl border border-line bg-white">
+            <div class="aspect-square overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600&q=80" alt="Smartphone" class="h-full w-full object-cover transition group-hover:scale-105" />
+            </div>
+            <div class="flex items-center justify-between p-4">
+              <span class="text-sm font-medium">Smartphones</span>
+              <span class="text-xs text-muted">Em breve</span>
+            </div>
+          </div>
+          <div class="reveal group overflow-hidden rounded-2xl border border-line bg-white">
+            <div class="aspect-square overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&q=80" alt="Laptop" class="h-full w-full object-cover transition group-hover:scale-105" />
+            </div>
+            <div class="flex items-center justify-between p-4">
+              <span class="text-sm font-medium">Laptops</span>
+              <span class="text-xs text-muted">Em breve</span>
+            </div>
+          </div>
+          <div class="reveal group overflow-hidden rounded-2xl border border-line bg-white">
+            <div class="aspect-square overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80" alt="Áudio" class="h-full w-full object-cover transition group-hover:scale-105" />
+            </div>
+            <div class="flex items-center justify-between p-4">
+              <span class="text-sm font-medium">Áudio</span>
+              <span class="text-xs text-muted">Em breve</span>
+            </div>
+          </div>
+          <div class="reveal group overflow-hidden rounded-2xl border border-line bg-white">
+            <div class="aspect-square overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80" alt="Wearables" class="h-full w-full object-cover transition group-hover:scale-105" />
+            </div>
+            <div class="flex items-center justify-between p-4">
+              <span class="text-sm font-medium">Wearables</span>
+              <span class="text-xs text-muted">Em breve</span>
+            </div>
+          </div>
+          <div class="reveal group overflow-hidden rounded-2xl border border-line bg-white">
+            <div class="aspect-square overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80" alt="Sneakers" class="h-full w-full object-cover transition group-hover:scale-105" />
+            </div>
+            <div class="flex items-center justify-between p-4">
+              <span class="text-sm font-medium">Sneakers</span>
+              <span class="text-xs text-muted">Em breve</span>
+            </div>
+          </div>
+          <div class="reveal group overflow-hidden rounded-2xl border border-line bg-white">
+            <div class="aspect-square overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=600&q=80" alt="Câmaras" class="h-full w-full object-cover transition group-hover:scale-105" />
+            </div>
+            <div class="flex items-center justify-between p-4">
+              <span class="text-sm font-medium">Câmaras</span>
+              <span class="text-xs text-muted">Em breve</span>
+            </div>
+          </div>
+          <div class="reveal group overflow-hidden rounded-2xl border border-line bg-white">
+            <div class="aspect-square overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&q=80" alt="Gaming" class="h-full w-full object-cover transition group-hover:scale-105" />
+            </div>
+            <div class="flex items-center justify-between p-4">
+              <span class="text-sm font-medium">Gaming</span>
+              <span class="text-xs text-muted">Em breve</span>
+            </div>
+          </div>
+          <div class="reveal group overflow-hidden rounded-2xl border border-line bg-white">
+            <div class="aspect-square overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80" alt="Lifestyle" class="h-full w-full object-cover transition group-hover:scale-105" />
+            </div>
+            <div class="flex items-center justify-between p-4">
+              <span class="text-sm font-medium">Lifestyle</span>
+              <span class="text-xs text-muted">Em breve</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <span class="hidden text-xs text-white/40 md:block">Apenas uma amostra · catálogo completo no lançamento</span>
-    </div>
+    </section>
 
-    <div class="grid grid-cols-2 gap-5 md:grid-cols-4">
-      <!-- card template -->
-      <article class="reveal card group overflow-hidden rounded-2xl">
-        <div class="relative aspect-square overflow-hidden bg-gradient-to-br from-zinc-800 to-zinc-900">
-          <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600&q=80" alt="Smartphone" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" loading="lazy"/>
-          <span class="absolute left-3 top-3 rounded-full bg-accent px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider">Em breve</span>
+    <!-- Brands marquee -->
+    <section id="brands" class="overflow-hidden border-b border-line py-14">
+      <p class="mb-8 text-center text-xs uppercase tracking-[0.2em] text-muted">Marcas que vamos trazer</p>
+      <div class="marquee whitespace-nowrap font-display text-2xl font-semibold text-ink/70 md:text-3xl">
+        <div class="flex shrink-0 gap-12 pr-12">
+          <span>Apple</span><span>Samsung</span><span>Sony</span><span>Nike</span><span>Adidas</span><span>Bose</span><span>Canon</span><span>Dyson</span><span>LG</span><span>Xiaomi</span>
         </div>
-        <div class="p-4">
-          <p class="text-[10px] uppercase tracking-wider text-white/40">Smartphones</p>
-          <p class="mt-1 text-sm font-medium">Os flagships do momento</p>
+        <div class="flex shrink-0 gap-12 pr-12" aria-hidden="true">
+          <span>Apple</span><span>Samsung</span><span>Sony</span><span>Nike</span><span>Adidas</span><span>Bose</span><span>Canon</span><span>Dyson</span><span>LG</span><span>Xiaomi</span>
         </div>
-      </article>
+      </div>
+    </section>
 
-      <article class="reveal card group overflow-hidden rounded-2xl">
-        <div class="relative aspect-square overflow-hidden bg-zinc-900">
-          <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&q=80" alt="Laptop" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" loading="lazy"/>
-        </div>
-        <div class="p-4">
-          <p class="text-[10px] uppercase tracking-wider text-white/40">Laptops</p>
-          <p class="mt-1 text-sm font-medium">Para criadores e profissionais</p>
-        </div>
-      </article>
+    <!-- CTA -->
+    <section id="cta" class="border-b border-line">
+      <div class="mx-auto max-w-3xl px-6 py-24 text-center">
+        <h2 class="reveal font-display text-4xl font-semibold tracking-tight md:text-6xl">
+          Algo grande está a caminho.
+        </h2>
+        <p class="reveal mt-5 text-muted">Seja o primeiro a saber quando a TechON abrir. Sem spam — apenas o essencial.</p>
+        <form class="reveal mx-auto mt-10 flex max-w-md flex-col gap-3 sm:flex-row" onsubmit="event.preventDefault(); this.querySelector('button').innerText='Adicionado ✓'">
+          <input type="email" required placeholder="o-seu@email.com" class="flex-1 rounded-full border border-line bg-white px-5 py-3 text-sm outline-none placeholder:text-muted focus:border-ink" />
+          <button class="rounded-full bg-ink px-6 py-3 text-sm font-medium text-white hover:opacity-90">Quero entrar</button>
+        </form>
+      </div>
+    </section>
 
-      <article class="reveal card group overflow-hidden rounded-2xl">
-        <div class="relative aspect-square overflow-hidden bg-zinc-900">
-          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80" alt="Headphones" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" loading="lazy"/>
+    <!-- Footer -->
+    <footer>
+      <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-10 text-sm text-muted md:flex-row">
+        <div class="flex items-center gap-2">
+          <div class="flex h-7 w-7 items-center justify-center rounded-md bg-ink text-white font-display text-xs font-bold">T</div>
+          <span class="font-display font-semibold text-ink">TechON</span>
+          <span>© 2026</span>
         </div>
-        <div class="p-4">
-          <p class="text-[10px] uppercase tracking-wider text-white/40">Áudio</p>
-          <p class="mt-1 text-sm font-medium">Som que se sente</p>
+        <div class="flex items-center gap-6">
+          <a href="mailto:ola@techon.ao" class="hover:text-ink">ola@techon.ao</a>
+          <a href="https://www.facebook.com/lojatechhaven/" class="hover:text-ink">Facebook</a>
         </div>
-      </article>
+      </div>
+    </footer>
 
-      <article class="reveal card group overflow-hidden rounded-2xl">
-        <div class="relative aspect-square overflow-hidden bg-zinc-900">
-          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80" alt="Wearables" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" loading="lazy"/>
-        </div>
-        <div class="p-4">
-          <p class="text-[10px] uppercase tracking-wider text-white/40">Wearables</p>
-          <p class="mt-1 text-sm font-medium">Tecnologia no pulso</p>
-        </div>
-      </article>
-
-      <article class="reveal card group overflow-hidden rounded-2xl">
-        <div class="relative aspect-square overflow-hidden bg-zinc-900">
-          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80" alt="Sneakers" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" loading="lazy"/>
-        </div>
-        <div class="p-4">
-          <p class="text-[10px] uppercase tracking-wider text-white/40">Sneakers</p>
-          <p class="mt-1 text-sm font-medium">Edições escolhidas</p>
-        </div>
-      </article>
-
-      <article class="reveal card group overflow-hidden rounded-2xl">
-        <div class="relative aspect-square overflow-hidden bg-zinc-900">
-          <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80" alt="Camera" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" loading="lazy"/>
-        </div>
-        <div class="p-4">
-          <p class="text-[10px] uppercase tracking-wider text-white/40">Câmaras</p>
-          <p class="mt-1 text-sm font-medium">Para contar histórias</p>
-        </div>
-      </article>
-
-      <article class="reveal card group overflow-hidden rounded-2xl">
-        <div class="relative aspect-square overflow-hidden bg-zinc-900">
-          <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=600&q=80" alt="Gaming" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" loading="lazy"/>
-        </div>
-        <div class="p-4">
-          <p class="text-[10px] uppercase tracking-wider text-white/40">Gaming</p>
-          <p class="mt-1 text-sm font-medium">Setups completos</p>
-        </div>
-      </article>
-
-      <article class="reveal card group overflow-hidden rounded-2xl">
-        <div class="relative aspect-square overflow-hidden bg-zinc-900">
-          <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600&q=80" alt="Perfume" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" loading="lazy"/>
-        </div>
-        <div class="p-4">
-          <p class="text-[10px] uppercase tracking-wider text-white/40">Lifestyle</p>
-          <p class="mt-1 text-sm font-medium">Beleza & casa</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- BRANDS marquee -->
-<section id="brands" class="relative z-10 overflow-hidden border-y border-white/5 bg-surface/50 py-10">
-  <p class="mb-6 text-center text-xs uppercase tracking-[0.3em] text-white/40">As marcas que amas, num só sítio</p>
-  <div class="flex w-max animate-marquee gap-16 px-6 text-2xl font-display font-semibold text-white/30 md:text-3xl">
-    <span>Apple</span><span>Samsung</span><span>Sony</span><span>Nike</span><span>Adidas</span><span>Bose</span><span>Canon</span><span>Dyson</span><span>LG</span><span>Xiaomi</span>
-    <span>Apple</span><span>Samsung</span><span>Sony</span><span>Nike</span><span>Adidas</span><span>Bose</span><span>Canon</span><span>Dyson</span><span>LG</span><span>Xiaomi</span>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="relative z-10">
-  <div class="mx-auto max-w-4xl px-6 py-28 text-center">
-    <h2 class="font-display text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
-      Algo grande está a<br/>caminho.
-    </h2>
-    <p class="mx-auto mt-6 max-w-xl text-white/60">Sê dos primeiros a saber quando abrirmos. Sem spam — só novidades que importam.</p>
-    <a href="#notify" class="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-ink hover:bg-white/90">
-      Entrar na lista de espera
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-    </a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="relative z-10 border-t border-white/5">
-  <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-10 text-sm text-white/40 md:flex-row">
-    <div class="flex items-center gap-2">
-      <div class="grid h-7 w-7 place-items-center rounded-md bg-gradient-to-br from-accent to-rose-500 text-xs font-bold text-white">E</div>
-      <span>© 2026 TechON · Luanda, Angola</span>
-    </div>
-    <div class="flex gap-6">
-      <a href="mailto:hello@TechON.ao" class="hover:text-white">hello@TechON.ao</a>
-      <a href="#" class="hover:text-white">Instagram</a>
-      <a href="#" class="hover:text-white">Twitter</a>
-    </div>
-  </div>
-</footer>
-
-<script>
-  const io = new IntersectionObserver((es)=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.15});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-</script>
-</body>
+    <script>
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+    </script>
 </html>
+  </body>
