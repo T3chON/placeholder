@@ -1,276 +1,375 @@
 <!doctype html>
 <html lang="pt">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>TechON — A próxima era do e-commerce em Angola</title>
-    <meta name="description" content="TechON está a chegar. A nova forma de comprar tecnologia e lifestyle em Angola — curadoria premium, entregas rápidas e suporte humano." />
-    <meta property="og:title" content="TechON — Em breve" />
-    <meta property="og:description" content="A próxima era do e-commerce em Angola. Junte-se à lista." />
-    <meta name="theme-color" content="#ffffff" />
-    <link rel="icon" href="favicon.ico" sizes="any">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'ui-sans-serif', 'system-ui'],
-              display: ['Space Grotesk', 'ui-sans-serif', 'system-ui'],
-            },
-            colors: {
-              ink: '#0a0a0f',
-              muted: '#6b7280',
-              line: '#ececee',
-              surface: '#fafafa',
-              accent: '#ff5b2e',
-            },
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TechON — A próxima era do e-commerce em Angola</title>
+  <meta name="description"
+    content="TechON está a chegar. A nova forma de comprar tecnologia e lifestyle em Angola — curadoria premium, entregas rápidas e suporte humano." />
+  <meta property="og:title" content="TechON — Em breve" />
+  <meta property="og:description" content="A próxima era do e-commerce em Angola. Junte-se à lista." />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+            display: ['Space Grotesk', 'ui-sans-serif', 'system-ui'],
+          },
+          colors: {
+            ink: '#0a0a0f',
+            muted: '#6b7280',
+            line: '#ececee',
+            surface: '#fafafa',
+            accent: '#ff5b2e',
           },
         },
-      };
-    </script>
-    <style>
-      html { scroll-behavior: smooth; }
-      body { background: #ffffff; color: #0a0a0f; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
-      .reveal { opacity: 0; transform: translateY(16px); transition: opacity .8s ease, transform .8s ease; }
-      .reveal.in { opacity: 1; transform: none; }
-      .marquee { display: flex; gap: 3rem; animation: marquee 30s linear infinite; }
-      @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-      .dotgrid {
-        background-image: radial-gradient(#0a0a0f12 1px, transparent 1px);
-        background-size: 22px 22px;
+      },
+    };
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #ffffff;
+      color: #0a0a0f;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: none;
+    }
+
+    .marquee {
+      display: flex;
+      gap: 3rem;
+      animation: marquee 30s linear infinite;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
       }
-    </style>
-  </head>
-  <body>
-    <!-- Header -->
-    <header class="sticky top-0 z-40 w-full border-b border-line bg-white/85 backdrop-blur">
-      <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-       <a href="#" class="flex items-center gap-2">
-          <!--div class="flex h-9 w-9 items-center justify-center rounded-lg bg-ink text-white font-display text-sm font-bold">T</div-->
-          <!--span class="font-display text-xl font-semibold tracking-tight">TechON</span-->
-          <img
-						src="logo.svg"
-						alt="TechON"
-						width="36"
-						height="36"
-						class="h-9 w-auto"
-					/>
-        </a>
-        <nav class="hidden gap-8 text-sm text-muted md:flex">
-          <a href="#vision" class="hover:text-ink">Visão</a>
-          <a href="#preview" class="hover:text-ink">Catálogo</a>
-          <a href="#brands" class="hover:text-ink">Marcas</a>
-          <a href="#cta" class="hover:text-ink">Notificar-me</a>
-        </nav>
-        <a href="#cta" class="rounded-full bg-ink px-4 py-2 text-xs font-medium text-white hover:opacity-90">Receber acesso</a>
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .dotgrid {
+      background-image: radial-gradient(#0a0a0f12 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+
+    @layer utilities {
+
+      /* Chrome, Safari, Edge, Opera */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox */
+      input[type='number'] {
+        -moz-appearance: textfield;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="sticky top-0 z-40 w-full border-b border-line bg-white/85 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a href="#" class="flex items-center gap-2">
+        <!--div class="flex h-9 w-9 items-center justify-center rounded-lg bg-ink text-white font-display text-sm font-bold">T</div-->
+        <!--span class="font-display text-xl font-semibold tracking-tight">TechON</span-->
+        <img src="logo.svg" alt="TechON" width="36" height="36" class="h-9 w-auto" />
+      </a>
+      <nav class="hidden gap-8 text-sm text-muted md:flex">
+        <a href="#vision" class="hover:text-ink">Visão</a>
+        <a href="#preview" class="hover:text-ink">Catálogo</a>
+        <a href="#brands" class="hover:text-ink">Marcas</a>
+        <a href="#cta" class="hover:text-ink">Notificar-me</a>
+      </nav>
+      <a href="#cta" class="rounded-full bg-ink px-4 py-2 text-xs font-medium text-white hover:opacity-90">Receber
+        acesso</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden border-b border-line">
+    <div class="absolute inset-0 dotgrid opacity-60"></div>
+    <div class="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
+      <div
+        class="reveal inline-flex items-center gap-2 rounded-full border border-line bg-white px-3 py-1 text-xs text-muted">
+        <span class="h-1.5 w-1.5 rounded-full bg-accent"></span>
+        Em construção — lançamento 2026
       </div>
-    </header>
+      <h1 class="reveal mt-8 max-w-4xl font-display text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl">
+        A próxima era do <span class="text-accent">e-commerce</span> em Angola.
+      </h1>
+      <p class="reveal mt-6 max-w-xl text-lg text-muted">
+        A TechON está a construir a melhor forma de descobrir e comprar tecnologia e lifestyle em Angola. Curadoria
+        premium, entregas rápidas, suporte humano.
+      </p>
 
-    <!-- Hero -->
-    <section class="relative overflow-hidden border-b border-line">
-      <div class="absolute inset-0 dotgrid opacity-60"></div>
-      <div class="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
-        <div class="reveal inline-flex items-center gap-2 rounded-full border border-line bg-white px-3 py-1 text-xs text-muted">
-          <span class="h-1.5 w-1.5 rounded-full bg-accent"></span>
-          Em construção — lançamento 2026
+      <form id="form1" class="reveal mt-10 flex max-w-md flex-col gap-3 sm:flex-row"
+        action="https://api.web3forms.com/submit" method="POST"
+        onsubmit="this.querySelector('button').innerText='Adicionado ✓'">
+        <!-- <div class="h-captcha" data-captcha="true" data-lang="de" data-theme="dark"
+          data-render="explicit" data-size="compact" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"></div>  -->
+        <input type="hidden" name="access_key" value="2c2a1f69-5159-44ac-86dd-4825bf99e024">
+        <input type="number" required placeholder="Deixe o seu whatsapp 📲" name="WhatsApp"
+          class="flex-1 rounded-full border border-line bg-white px-5 py-3 text-sm outline-none placeholder:text-muted focus:border-ink" />
+        <button type="submit"
+          class="rounded-full bg-ink px-6 py-3 text-sm font-medium text-white hover:opacity-90">Receber aviso</button>
+      </form>
+
+      <div class="reveal mt-16 grid max-w-2xl grid-cols-3 gap-8 border-t border-line pt-8">
+        <div>
+          <p class="font-display text-3xl font-semibold">+500</p>
+          <p class="text-xs text-muted">produtos no lançamento</p>
         </div>
-        <h1 class="reveal mt-8 max-w-4xl font-display text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl">
-          A próxima era do <span class="text-accent">e-commerce</span> em Angola.
-        </h1>
-        <p class="reveal mt-6 max-w-xl text-lg text-muted">
-          A TechON está a construir a melhor forma de descobrir e comprar tecnologia e lifestyle em Angola. Curadoria premium, entregas rápidas, suporte humano.
-        </p>
-
-        <form class="reveal mt-10 flex max-w-md flex-col gap-3 sm:flex-row" onsubmit="event.preventDefault(); this.querySelector('button').innerText='Adicionado ✓'">
-          <input type="email" required placeholder="o-seu@email.com" class="flex-1 rounded-full border border-line bg-white px-5 py-3 text-sm outline-none placeholder:text-muted focus:border-ink" />
-          <button class="rounded-full bg-ink px-6 py-3 text-sm font-medium text-white hover:opacity-90">Avisar-me</button>
-        </form>
-
-        <div class="reveal mt-16 grid max-w-2xl grid-cols-3 gap-8 border-t border-line pt-8">
-          <div>
-            <p class="font-display text-3xl font-semibold">+500</p>
-            <p class="text-xs text-muted">produtos no lançamento</p>
-          </div>
-          <div>
-            <p class="font-display text-3xl font-semibold">48h</p>
-            <p class="text-xs text-muted">entrega em Luanda</p>
-          </div>
-          <div>
-            <p class="font-display text-3xl font-semibold">100%</p>
-            <p class="text-xs text-muted">produtos originais</p>
-          </div>
+        <div>
+          <p class="font-display text-3xl font-semibold">48h</p>
+          <p class="text-xs text-muted">entrega em Luanda</p>
         </div>
-      </div>
-    </section>
-
-    <!-- Vision -->
-    <section id="vision" class="border-b border-line">
-      <div class="mx-auto max-w-6xl px-6 py-24">
-        <p class="reveal text-xs uppercase tracking-[0.2em] text-muted">A nossa visão</p>
-        <h2 class="reveal mt-3 max-w-2xl font-display text-4xl font-semibold tracking-tight md:text-5xl">
-          Comprar online em Angola, como nunca foi.
-        </h2>
-        <div class="mt-16 grid gap-10 md:grid-cols-3">
-          <div class="reveal">
-            <div class="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-accent">01</div>
-            <h3 class="mt-5 font-display text-xl font-semibold">Curadoria</h3>
-            <p class="mt-2 text-sm text-muted">Cada produto é escolhido a dedo. Só o que vale a pena chega ao nosso catálogo.</p>
-          </div>
-          <div class="reveal">
-            <div class="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-accent">02</div>
-            <h3 class="mt-5 font-display text-xl font-semibold">Entregas rápidas</h3>
-            <p class="mt-2 text-sm text-muted">Logística pensada para Angola. 48h em Luanda, dias úteis no resto do país.</p>
-          </div>
-          <div class="reveal">
-            <div class="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-accent">03</div>
-            <h3 class="mt-5 font-display text-xl font-semibold">Suporte humano</h3>
-            <p class="mt-2 text-sm text-muted">Pessoas reais, prontas a ajudar antes e depois da compra. Sempre.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Product preview -->
-    <section id="preview" class="border-b border-line bg-surface">
-      <div class="mx-auto max-w-6xl px-6 py-24">
-        <div class="flex items-end justify-between gap-6">
-          <div>
-            <p class="reveal text-xs uppercase tracking-[0.2em] text-muted">Pré-visualização</p>
-            <h2 class="reveal mt-3 font-display text-4xl font-semibold tracking-tight md:text-5xl">O que vem aí.</h2>
-          </div>
-          <span class="reveal hidden text-sm text-muted md:block">Uma amostra das categorias</span>
-        </div>
-
-        <div class="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4">
-          <!-- cards -->
-          <div class="reveal group overflow-hidden rounded-2xl border border-line bg-white">
-            <div class="aspect-square overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600&q=80" alt="Smartphone" class="h-full w-full object-cover transition group-hover:scale-105" />
-            </div>
-            <div class="flex items-center justify-between flex-wrap p-4">
-              <span class="text-sm font-medium">Smartphones</span>
-              <span class="text-xs text-muted">Em breve</span>
-            </div>
-          </div>
-          <div class="reveal group overflow-hidden rounded-2xl border border-line bg-white">
-            <div class="aspect-square overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&q=80" alt="Laptop" class="h-full w-full object-cover transition group-hover:scale-105" />
-            </div>
-            <div class="flex items-center justify-between flex-wrap p-4">
-              <span class="text-sm font-medium">Laptops</span>
-              <span class="text-xs text-muted">Em breve</span>
-            </div>
-          </div>
-          <div class="reveal group overflow-hidden rounded-2xl border border-line bg-white">
-            <div class="aspect-square overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80" alt="Áudio" class="h-full w-full object-cover transition group-hover:scale-105" />
-            </div>
-            <div class="flex items-center justify-between flex-wrap p-4">
-              <span class="text-sm font-medium">Áudio</span>
-              <span class="text-xs text-muted">Em breve</span>
-            </div>
-          </div>
-          <div class="reveal group overflow-hidden rounded-2xl border border-line bg-white">
-            <div class="aspect-square overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80" alt="Wearables" class="h-full w-full object-cover transition group-hover:scale-105" />
-            </div>
-            <div class="flex items-center justify-between flex-wrap p-4">
-              <span class="text-sm font-medium">Wearables</span>
-              <span class="text-xs text-muted">Em breve</span>
-            </div>
-          </div>
-          <div class="reveal group overflow-hidden rounded-2xl border border-line bg-white">
-            <div class="aspect-square overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80" alt="Sneakers" class="h-full w-full object-cover transition group-hover:scale-105" />
-            </div>
-            <div class="flex items-center justify-between flex-wrap p-4">
-              <span class="text-sm font-medium">Sneakers</span>
-              <span class="text-xs text-muted">Em breve</span>
-            </div>
-          </div>
-          <div class="reveal group overflow-hidden rounded-2xl border border-line bg-white">
-            <div class="aspect-square overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=600&q=80" alt="Câmaras" class="h-full w-full object-cover transition group-hover:scale-105" />
-            </div>
-            <div class="flex items-center justify-between flex-wrap p-4">
-              <span class="text-sm font-medium">Câmaras</span>
-              <span class="text-xs text-muted">Em breve</span>
-            </div>
-          </div>
-          <div class="reveal group overflow-hidden rounded-2xl border border-line bg-white">
-            <div class="aspect-square overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&q=80" alt="Gaming" class="h-full w-full object-cover transition group-hover:scale-105" />
-            </div>
-            <div class="flex items-center justify-between flex-wrap p-4">
-              <span class="text-sm font-medium">Gaming</span>
-              <span class="text-xs text-muted">Em breve</span>
-            </div>
-          </div>
-          <div class="reveal group overflow-hidden rounded-2xl border border-line bg-white">
-            <div class="aspect-square overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80" alt="Lifestyle" class="h-full w-full object-cover transition group-hover:scale-105" />
-            </div>
-            <div class="flex items-center justify-between flex-wrap p-4">
-              <span class="text-sm font-medium">Lifestyle</span>
-              <span class="text-xs text-muted">Em breve</span>
-            </div>
-          </div>
+        <div>
+          <p class="font-display text-3xl font-semibold">100%</p>
+          <p class="text-xs text-muted">produtos originais</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Brands marquee -->
-    <section id="brands" class="overflow-hidden border-b border-line py-14">
-      <p class="mb-8 text-center text-xs uppercase tracking-[0.2em] text-muted">Marcas que vamos trazer</p>
-      <div class="marquee whitespace-nowrap font-display text-2xl font-semibold text-ink/70 md:text-3xl">
-        <div class="flex shrink-0 gap-12 pr-12">
-          <span>Apple</span><span>Samsung</span><span>Sony</span><span>Nike</span><span>Adidas</span><span>Bose</span><span>Canon</span><span>Dyson</span><span>LG</span><span>Xiaomi</span>
+  <!-- Vision -->
+  <section id="vision" class="border-b border-line">
+    <div class="mx-auto max-w-6xl px-6 py-24">
+      <p class="reveal text-xs uppercase tracking-[0.2em] text-muted">A nossa visão</p>
+      <h2 class="reveal mt-3 max-w-2xl font-display text-4xl font-semibold tracking-tight md:text-5xl">
+        Comprar online em Angola, como nunca foi.
+      </h2>
+      <div class="mt-16 grid gap-10 md:grid-cols-3">
+        <div class="reveal">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-accent">01</div>
+          <h3 class="mt-5 font-display text-xl font-semibold">Curadoria</h3>
+          <p class="mt-2 text-sm text-muted">Cada produto é escolhido a dedo. Só o que vale a pena chega ao nosso
+            catálogo.</p>
         </div>
-        <div class="flex shrink-0 gap-12 pr-12" aria-hidden="true">
-          <span>Apple</span><span>Samsung</span><span>Sony</span><span>Nike</span><span>Adidas</span><span>Bose</span><span>Canon</span><span>Dyson</span><span>LG</span><span>Xiaomi</span>
+        <div class="reveal">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-accent">02</div>
+          <h3 class="mt-5 font-display text-xl font-semibold">Entregas rápidas</h3>
+          <p class="mt-2 text-sm text-muted">Logística pensada para Angola. 48h em Luanda, dias úteis no resto do país.
+          </p>
         </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section id="cta" class="border-b border-line">
-      <div class="mx-auto max-w-3xl px-6 py-24 text-center">
-        <h2 class="reveal font-display text-4xl font-semibold tracking-tight md:text-6xl">
-          Algo grande está a caminho.
-        </h2>
-        <p class="reveal mt-5 text-muted">Seja o primeiro a saber quando a TechON abrir. Sem spam — apenas o essencial.</p>
-        <form class="reveal mx-auto mt-10 flex max-w-md flex-col gap-3 sm:flex-row" onsubmit="event.preventDefault(); this.querySelector('button').innerText='Adicionado ✓'">
-          <input type="email" required placeholder="o-seu@email.com" class="flex-1 rounded-full border border-line bg-white px-5 py-3 text-sm outline-none placeholder:text-muted focus:border-ink" />
-          <button class="rounded-full bg-ink px-6 py-3 text-sm font-medium text-white hover:opacity-90">Quero entrar</button>
-        </form>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-10 text-sm text-muted md:flex-row">
-        <div class="flex items-center gap-2">
-          <div class="flex h-7 w-7 items-center justify-center rounded-md bg-ink text-white font-display text-xs font-bold">T</div>
-          <span class="font-display font-semibold text-ink">TechON</span>
-          <span>© 2026</span>
-        </div>
-        <div class="flex items-center flex-wrap gap-6">
-          <a href="https://wa.me/+244935933530?text=Olá, gostaria de ter mais informações sobre a vossa loja" class="hover:text-ink">Whatsapp: 935 933 530</a>
-          <a href="https://www.facebook.com/lojatechhaven/" class="hover:text-ink">Facebook</a>
-          <!-- <a href="mailto:ola@techon.ao" class="hover:text-ink">info@techon.ao</a> -->
+        <div class="reveal">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-accent">03</div>
+          <h3 class="mt-5 font-display text-xl font-semibold">Suporte humano</h3>
+          <p class="mt-2 text-sm text-muted">Pessoas reais, prontas a ajudar antes e depois da compra. Sempre.</p>
         </div>
       </div>
-    </footer>
+    </div>
+  </section>
 
-    <script>
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-      }, { threshold: 0.12 });
-      document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
-    </script>
+  <!-- Product preview -->
+  <section id="preview" class="border-b border-line bg-surface">
+    <div class="mx-auto max-w-6xl px-6 py-24">
+      <div class="flex items-end justify-between gap-6">
+        <div>
+          <p class="reveal text-xs uppercase tracking-[0.2em] text-muted">Pré-visualização</p>
+          <h2 class="reveal mt-3 font-display text-4xl font-semibold tracking-tight md:text-5xl">O que vem aí.</h2>
+        </div>
+        <span class="reveal hidden text-sm text-muted md:block">Uma amostra das categorias</span>
+      </div>
+
+      <div class="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4">
+        <!-- cards -->
+        <div class="reveal group overflow-hidden rounded-2xl border border-line bg-white">
+          <div class="aspect-square overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600&q=80" alt="Smartphone"
+              class="h-full w-full object-cover transition group-hover:scale-105" />
+          </div>
+          <div class="flex items-center justify-between flex-wrap p-4">
+            <span class="text-sm font-medium">Smartphones</span>
+            <span class="text-xs text-muted">Em breve</span>
+          </div>
+        </div>
+        <div class="reveal group overflow-hidden rounded-2xl border border-line bg-white">
+          <div class="aspect-square overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&q=80" alt="Laptop"
+              class="h-full w-full object-cover transition group-hover:scale-105" />
+          </div>
+          <div class="flex items-center justify-between flex-wrap p-4">
+            <span class="text-sm font-medium">Laptops</span>
+            <span class="text-xs text-muted">Em breve</span>
+          </div>
+        </div>
+        <div class="reveal group overflow-hidden rounded-2xl border border-line bg-white">
+          <div class="aspect-square overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80" alt="Áudio"
+              class="h-full w-full object-cover transition group-hover:scale-105" />
+          </div>
+          <div class="flex items-center justify-between flex-wrap p-4">
+            <span class="text-sm font-medium">Áudio</span>
+            <span class="text-xs text-muted">Em breve</span>
+          </div>
+        </div>
+        <div class="reveal group overflow-hidden rounded-2xl border border-line bg-white">
+          <div class="aspect-square overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80" alt="Wearables"
+              class="h-full w-full object-cover transition group-hover:scale-105" />
+          </div>
+          <div class="flex items-center justify-between flex-wrap p-4">
+            <span class="text-sm font-medium">Wearables</span>
+            <span class="text-xs text-muted">Em breve</span>
+          </div>
+        </div>
+        <div class="reveal group overflow-hidden rounded-2xl border border-line bg-white">
+          <div class="aspect-square overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80" alt="Sneakers"
+              class="h-full w-full object-cover transition group-hover:scale-105" />
+          </div>
+          <div class="flex items-center justify-between flex-wrap p-4">
+            <span class="text-sm font-medium">Sneakers</span>
+            <span class="text-xs text-muted">Em breve</span>
+          </div>
+        </div>
+        <div class="reveal group overflow-hidden rounded-2xl border border-line bg-white">
+          <div class="aspect-square overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=600&q=80" alt="Câmaras"
+              class="h-full w-full object-cover transition group-hover:scale-105" />
+          </div>
+          <div class="flex items-center justify-between flex-wrap p-4">
+            <span class="text-sm font-medium">Câmaras</span>
+            <span class="text-xs text-muted">Em breve</span>
+          </div>
+        </div>
+        <div class="reveal group overflow-hidden rounded-2xl border border-line bg-white">
+          <div class="aspect-square overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&q=80" alt="Gaming"
+              class="h-full w-full object-cover transition group-hover:scale-105" />
+          </div>
+          <div class="flex items-center justify-between flex-wrap p-4">
+            <span class="text-sm font-medium">Gaming</span>
+            <span class="text-xs text-muted">Em breve</span>
+          </div>
+        </div>
+        <div class="reveal group overflow-hidden rounded-2xl border border-line bg-white">
+          <div class="aspect-square overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80" alt="Lifestyle"
+              class="h-full w-full object-cover transition group-hover:scale-105" />
+          </div>
+          <div class="flex items-center justify-between flex-wrap p-4">
+            <span class="text-sm font-medium">Lifestyle</span>
+            <span class="text-xs text-muted">Em breve</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brands marquee -->
+  <section id="brands" class="overflow-hidden border-b border-line py-14">
+    <p class="mb-8 text-center text-xs uppercase tracking-[0.2em] text-muted">Marcas que vamos trazer</p>
+    <div class="marquee whitespace-nowrap font-display text-2xl font-semibold text-ink/70 md:text-3xl">
+      <div class="flex shrink-0 gap-12 pr-12">
+        <span>Apple</span><span>Samsung</span><span>Sony</span><span>Nike</span><span>Adidas</span><span>Bose</span><span>Canon</span><span>Dyson</span><span>LG</span><span>Xiaomi</span>
+      </div>
+      <div class="flex shrink-0 gap-12 pr-12" aria-hidden="true">
+        <span>Apple</span><span>Samsung</span><span>Sony</span><span>Nike</span><span>Adidas</span><span>Bose</span><span>Canon</span><span>Dyson</span><span>LG</span><span>Xiaomi</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" class="border-b border-line">
+    <div class="mx-auto max-w-3xl px-6 py-24 text-center">
+      <h2 class="reveal font-display text-4xl font-semibold tracking-tight md:text-6xl">
+        Algo grande está a caminho.
+      </h2>
+      <p class="reveal mt-5 text-muted">Seja o primeiro a saber quando a TechON abrir. Sem spam — apenas o essencial.
+      </p>
+      <form id="form2" class="reveal mx-auto mt-10 flex max-w-md flex-col gap-3 sm:flex-row"
+        action="https://api.web3forms.com/submit" method="POST"
+        onsubmit="this.querySelector('button').innerText='Adicionado ✓'">
+
+        <input type="hidden" name="access_key" value="2c2a1f69-5159-44ac-86dd-4825bf99e024">
+        <input type="number" name="WhatsApp" required placeholder="Deixe o seu whatsapp 📲"
+          class="flex-1 rounded-full border border-line bg-white px-5 py-3 text-sm outline-none placeholder:text-muted focus:border-ink" />
+        <button type="submit"
+          class="rounded-full bg-ink px-6 py-3 text-sm font-medium text-white hover:opacity-90">Quero entrar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div
+      class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-10 text-sm text-muted md:flex-row">
+      <div class="flex items-end gap-2">
+        <img src="logo.svg" alt="TechON" width="36" height="36" class="h-9 w-auto" />
+        <p>© 2026</p>
+      </div>
+      <div class="flex items-center flex-wrap gap-6">
+        <a href="https://wa.me/+244935933530?text=Olá, gostaria de ter mais informações sobre a vosss loja"
+          class="hover:text-ink">WhatsApp: 935 933 530</a>
+        <a href="https://www.facebook.com/lojatechhaven/" class="hover:text-ink">Facebook</a>
+        <!-- <a href="mailto:ola@techon.ao" class="hover:text-ink">info@techon.ao</a> -->
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  </script>
+
+  <script src="https://web3forms.com/client/script.js" async defer></script>x
+  <!-- <script>
+    const form1 = document.getElementById('form1');
+    const form2 = document.getElementById('form2');
+
+    form1.addEventListener('submit', function (e) {
+      const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+      if (!hCaptcha) {
+        e.preventDefault();
+        alert("Please fill out captcha field")
+        return
+      }
+    });
+
+    form2.addEventListener('submit', function (e) {
+      const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+      if (!hCaptcha) {
+        e.preventDefault();
+        alert("Please fill out captcha field")
+        return
+      }
+    });
+  </script> -->
+
 </html>
-  </body>
+</body>
